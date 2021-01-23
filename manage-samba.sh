@@ -47,7 +47,7 @@ function create_share() {
         dialog --quoted --ok-label "Submit" \
               --backtitle "Linux Samba Management" \
               --title "Add usershare" \
-              --form "Create a shared folder" \
+              --form "Create a shared folder. Share name must not include space." \
         15 90 0 \
             "Share name:" 1 1   ""  1 15 10 0 \
             "Share folder:"    2 1  "$share_folder"     2 15 100 0 \
@@ -92,7 +92,9 @@ function delete_share() {
 		   "Share name:" 1 1 "" 1 15 10 0 \
 	    2>&1 >/dev/tty)
 
-     wait $! || return
+     # return to main menu if form is cancelled
+     #wait $! || return
+     [[ $? -ne 0 ]] && return
 
      # scan info to find corresponding share dir
      share_dir=$(find_dir "$share_del")
