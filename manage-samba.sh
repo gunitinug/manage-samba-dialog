@@ -55,7 +55,8 @@ function create_share() {
         2>&1 >/dev/tty)
 
     # return if form is cancelled
-    wait $! || return
+    #wait $! || return
+    [[ $? -ne 0 ]] && return
 
     # get rid of \ from "$share_folder"
     values[1]=$(echo $share_folder | sed 's/\\//g')
