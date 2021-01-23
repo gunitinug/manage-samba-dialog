@@ -3,7 +3,7 @@
 # MANAGE SAMBA SCRIPT
 # Description: Facilitates adding/removing samba share folders using dialog interface
 # Author: Logan Won-Ki Lee
-# Version: 1.0
+# Version: 1.01
 # Date: 23 January 2021
 
 function display_output() {
@@ -40,7 +40,7 @@ function create_share() {
     local share_folder
     local -a values
 
-    share_folder=$(dialog --stdout --title "Use space to select and enter to finalize" --dselect ~/ 14 90) || return
+    share_folder=$(dialog --stdout --title "Use space to select and enter to finalize" --dselect ~/ 14 70) || return
 
     # Store data to values array
     mapfile -t values < <(
