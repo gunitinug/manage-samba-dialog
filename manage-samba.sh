@@ -55,7 +55,6 @@ function create_share() {
         2>&1 >/dev/tty)
 
     # return if form is cancelled
-    #wait $! || return
     [[ $? -ne 0 ]] && return
 
     # get rid of \ from "$share_folder"
@@ -94,7 +93,6 @@ function delete_share() {
 	    2>&1 >/dev/tty)
 
      # return to main menu if form is cancelled
-     #wait $! || return
      [[ $? -ne 0 ]] && return
 
      # scan info to find corresponding share dir
