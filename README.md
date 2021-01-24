@@ -4,7 +4,23 @@ Facilitates adding/removing samba share folders using dialog interface
 # Tutorial
 
 ## What you need to begin
-You need both samba and dialog installed before you begin.
+You need both samba and dialog installed before you begin. 
+
+Download this script by
+
+```
+git clone https://github.com/gunitinug/manage-samba-dialog.git
+```
+
+Of course, you need git to do this.
+
+Run the program by
+
+```
+cd /path/to/manage-samba-dialog
+chmod +x ./manage-samba.sh
+./manage-samba.sh
+```
 
 ## Main menu
 We will create a public writable shared folder from main menu.
