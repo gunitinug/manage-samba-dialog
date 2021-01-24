@@ -19,7 +19,7 @@ We are filling in form. You can see that Share name is set to test.
 ![Fill in form to create shared folder](http://pennowebdesign.com/pics_for_manage_samba/add%20shared%20folder%20form.png)
 
 ## Confirm to execute commands
-Enter Yes and command is exeucted. You can see a dialogue saying it has been successfully applied.
+Enter Yes and command is executed. You can see a dialogue saying it has been successfully applied.
 ![Confirm 1](http://pennowebdesign.com/pics_for_manage_samba/confirm%201.png)
 ![Success 1](http://pennowebdesign.com/pics_for_manage_samba/success%201.png)
 ![Confirm 2](http://pennowebdesign.com/pics_for_manage_samba/confirm%202.png)
