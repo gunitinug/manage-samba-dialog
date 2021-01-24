@@ -105,7 +105,7 @@ function delete_share() {
 
 while true; do
     menuitem=$(dialog --clear \
-        --title "Samba shares tasks" \
+        --title "Samba shares tasks. Made by Logan Won-Ki Lee 2021" \
         --menu "Choose your task" 50 100 10 \
         PUBW "Create a public writable shared folder" \
         PUBR "Create a public read-only shared folder" \
