@@ -7,7 +7,7 @@
 # Date: 23 January 2021
 
 function display_output() {
-    dialog --backtitle "" --title "" --clear --msgbox "$1" 10 90
+    dialog --title "" --clear --msgbox "$1" 10 90
 }
 
 function list_shares() {
@@ -30,7 +30,6 @@ function execute() {
 
 function yesno() {
     dialog --title "Confirm" \
-       --backtitle "Confirm command" \
        --yesno "$*" 7 90
 
     [[ $? -eq 0 ]] && execute "$@" || return 1
@@ -45,7 +44,6 @@ function create_share() {
     # Store data to values array
     mapfile -t values < <(
         dialog --quoted --ok-label "Submit" \
-              --backtitle "Linux Samba Management" \
               --title "Add usershare" \
               --form "Create a shared folder. Share name must not include space." \
         15 90 0 \
@@ -54,8 +52,8 @@ function create_share() {
             "Comments:"    3 1  ""      3 15 50 0 \
         2>&1 >/dev/tty)
 
-    # return if form is cancelled
-    [[ $? -ne 0 ]] && return
+    # return to main menu if form is cancelled
+    wait $! || return
 
     # get rid of \ from "$share_folder"
     values[1]=$(echo $share_folder | sed 's/\\//g')
@@ -85,7 +83,6 @@ function find_dir() {
 
 function delete_share() {
      share_del=$(dialog --quoted --ok-label "Submit" \
-		   --backtitle "Linux Samba Management" \
 		   --title "Delete usershare" \
 		   --form "Delete a shared folder" \
 	    15 90 0 \
@@ -107,7 +104,7 @@ function delete_share() {
 # the main menu is in an infinite loop
 
 while true; do
-    menuitem=$(dialog --clear --backtitle "Linux Shell Script Tutorial" \
+    menuitem=$(dialog --clear \
         --title "Samba shares tasks" \
         --menu "Choose your task" 50 100 10 \
         PUBW "Create a public writable shared folder" \
@@ -127,3 +124,5 @@ while true; do
         EXIT) break ;;
     esac
 done
+
+clear
