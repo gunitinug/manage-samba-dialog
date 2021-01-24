@@ -14,10 +14,10 @@ git clone https://github.com/gunitinug/manage-samba-dialog.git
 
 Of course, you need git to do this.
 
-You need to start samba server beforehand. On Ubuntu this is done by
+You need to start samba server beforehand. On a Debian-based distro this is done by
 
 ```
-sudo systemctl start smbd
+sudo systemctl start smbd.service
 ```
 
 Run the program by
