@@ -3,6 +3,9 @@ Facilitates adding/removing samba share folders using dialog interface
 
 # Tutorial
 
+## What you need to begin
+You need both samba and dialog installed before you begin.
+
 ## Main menu
 We will create a public writable shared folder from main menu.
 ![Main menu](http://pennowebdesign.com/pics_for_manage_samba/main%20menu.png)
